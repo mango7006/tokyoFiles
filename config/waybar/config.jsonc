@@ -119,7 +119,7 @@
     "on-click": "kitty -e btop"
   },
   "network": {
-    "format-wifi": " {essid}",
+    "format-wifi": "  {essid}",
     "format-ethernet": "{ipaddr}/{cidr} ",
     "tooltip-format": "{essid} - {ifname} via {gwaddr} ",
     "format-linked": "{ifname} (No IP) ",
