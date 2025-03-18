@@ -7,10 +7,6 @@ repo_link=mango7006/tokyoFiles.git
 repo_config=~/gits/tokyoFiles/config/
 repo_home=~/gits/tokyoFiles/home/
 
-RED='\033[0;31m'
-NC='\033[0m' # No Color
-# echo -e "I ${RED}love${NC} Stack Overflow"
-
 echo "Updating github repo for Dotfiles"
 
 read -r -p "Do you want to copy dotfiles to repo? [y/N] " response
@@ -39,8 +35,7 @@ if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
   read -r -p "Commit Message: " comMessage
   git commit -m "$comMessage $date"
   git push $gittoken@github.com/$repo_link
+  echo "Done pushing, changes saved"
 else
   echo "Not pushing changes to github"
 fi
-
-echo -e "${RED}Script ended${NC}"
