@@ -7,6 +7,10 @@ repo_link=mango7006/tokyoFiles.git
 repo_config=~/gits/tokyoFiles/config/
 repo_home=~/gits/tokyoFiles/home/
 
+RED='\033[0;31m'
+NC='\033[0m' # No Color
+# echo -e "I ${RED}love${NC} Stack Overflow"
+
 echo "Updating github repo for Dotfiles"
 
 read -r -p "Do you want to copy dotfiles to repo? [y/N] " response
@@ -39,4 +43,4 @@ else
   echo "Not pushing changes to github"
 fi
 
-echo "Script ended"
+echo -e "${RED}Script ended${NC}"
