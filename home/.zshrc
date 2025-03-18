@@ -1,3 +1,12 @@
+########################
+### mango7006 .zshrc ###
+########################
+
+# Ensure needed packages are installed
+for package in neovim starship zoxide bat eza fastfetch trash ripgrep; do
+  pacman -Qs $package &>/dev/null || sudo pacman -S --noconfirm $package
+done
+
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
 [ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
@@ -33,6 +42,7 @@ alias l="eza -a --color=auto --icons"
 alias la="eza -alh --color=auto --icons"
 
 alias cat="bat"
+alias rcat"cat"
 
 alias cd="z"
 
@@ -63,10 +73,6 @@ alias reboot="shutdown -r now"
 
 alias loginpi="ssh pipi4@192.168.11.126"
 
-# Show all logs in /var/log
-alias logs="sudo find /var/log -type f -exec file {} \; | grep 'text' | cut -d' ' -f1 | sed -e's/:$//g' | grep -v '[0-9]$' | xargs tail -f"
-
-# Change directory aliases
 alias home='cd ~'
 alias cd..='cd ..'
 alias ..='cd ..'
