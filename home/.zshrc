@@ -2,11 +2,6 @@
 ### mango7006 .zshrc ###
 ########################
 
-# Ensure needed packages are installed
-for package in neovim starship zoxide bat eza fastfetch trash ripgrep; do
-  pacman -Qs $package &>/dev/null || sudo pacman -S --noconfirm $package
-done
-
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
 [ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
@@ -79,6 +74,21 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
+
+#################
+### Functions ###
+#################
+
+ensure_installed() {
+  local packages=(neovim starship zoxide bat eza fastfetch trash ripgrep)
+  for package in $packages; do
+    pacman -Qs $package &>/dev/null || sudo pacman -S --noconfirm $package
+  done
+}
+
+refresh() {
+  source ~/.zshrc && exec zsh
+}
 
 # Color for manpages in less makes manpages a little easier to read
 export LESS_TERMCAP_mb=$'\E[01;31m'
