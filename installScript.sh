@@ -6,7 +6,7 @@ conf=~/.config/
 
 echo "Install script for dotfiles"
 
-read -r -p "Do you want to make a backup of your current dotfiles? [y/N] " response
+read -r -p "Do you want to make a backup of your current dotfiles? (if this is a clean install answer no) [y/N] " response
 if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
   echo "Creating backup of current dotfiles"
   mkdir -p ~/.config/bkup
@@ -34,7 +34,7 @@ fi
 read -r -p "Do you want to install dependencies and packages? [y/N] " response
 if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
   echo "Downloading packages"
-  sudo pacman --needed -S $(<pkgs.txt)
+  sudo pacman --needed -S "$(<pkgs.txt)"
 else
   echo "Not installing packages, WARNING, this might make my dotfiles unuseable."
 fi

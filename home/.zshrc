@@ -43,7 +43,6 @@ alias cd="z"
 
 alias cp="cp -Iv"
 alias mv="mv -v"
-alias rm="rm -Iv"
 
 alias grep="rg -P -i --color=auto"
 
@@ -66,7 +65,7 @@ alias rm="trash"
 alias shutdown="shutdown now"
 alias reboot="shutdown -r now"
 
-alias loginpi="ssh pipi4@192.168.11.126"
+alias loginpi="ssh pipi4@192.168.11.128"
 
 alias home='cd ~'
 alias cd..='cd ..'
@@ -79,20 +78,26 @@ alias .....='cd ../../../..'
 ### Functions ###
 #################
 
-ensure_installed() {
+zsh_install() {
   local packages=(neovim starship zoxide bat eza fastfetch trash ripgrep)
   for package in $packages; do
     pacman -Qs $package &>/dev/null || sudo pacman -S --noconfirm $package
   done
 }
 
-nvim_pkgs() {
+nvim_install() {
   local neovim_deps=(lazygit luarocks npm typescript)
   for deps in $neovim_deps; do 
     pacman -Qs $deps &>/dev/null || sudo pacman -S --noconfirm $deps
   done
 }
 
+font_install() {
+  local font_deps=(awesome-terminal-fonts ttf-droid ttf-font-awesome ttf-ibm-plex ttf-jetbrains-mono ttf-jetbrains-mono-nerd ttf-nerd-fonts-symbols)
+  for fonts in $font_deps; do 
+    pacman -Qs $fonts &>/dev/null || sudo pacman -S --noconfirm $fonts
+  done
+}
 
 refresh() {
   source ~/.zshrc && exec zsh
