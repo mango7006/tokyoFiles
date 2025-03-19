@@ -86,6 +86,14 @@ ensure_installed() {
   done
 }
 
+nvim_pkgs() {
+  local neovim_deps=(lazygit luarocks npm typescript)
+  for deps in $neovim_deps; do 
+    pacman -Qs $deps &>/dev/null || sudo pacman -S --noconfirm $deps
+  done
+}
+
+
 refresh() {
   source ~/.zshrc && exec zsh
 }
