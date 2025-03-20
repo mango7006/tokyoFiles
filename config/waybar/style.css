@@ -10,7 +10,7 @@
 }
 
 window#waybar {
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0);
   color: @text;
   /* border-bottom: 1px solid white; */
   /* border-radius: 0px 0px 8px 8px; */
@@ -65,7 +65,6 @@ tooltip {
 #pulseaudio,
 #network,
 #bluetooth,
-#temperature,
 #workspaces,
 #tray,
 #memory,
@@ -81,14 +80,6 @@ tooltip {
 
 #memory {
   color: @pine;
-}
-
-#temperature {
-  color: @text;
-}
-
-#temperature.critical {
-  color: @love;
 }
 
 #tray {

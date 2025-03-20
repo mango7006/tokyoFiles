@@ -36,7 +36,7 @@ if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
   echo "Downloading packages"
   sudo pacman --needed -S "$(<pkgs.txt)"
 else
-  echo "Not installing packages, WARNING, this might make my dotfiles unuseable."
+  echo -e "Not installing packages. \n WARNING: this might make my dotfiles unuseable."
 fi
 
 echo "End of install script"

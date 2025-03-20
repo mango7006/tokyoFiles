@@ -15,7 +15,6 @@
   "modules-right": [
     "network",
     "bluetooth",
-    "temperature",
     "memory",
     "pulseaudio",
     "battery",
@@ -103,13 +102,6 @@
       ]
     }
   },
-  "temperature": {
-    "thermal-zone": 1,
-    "format": "TEMP {temperatureC}°C",
-    "critical-threshold": 80,
-    "format-critical": "{temperatureC}°C ",
-    "interval": 5
-  },
   "memory": {
     "interval": 30,
     "format": " {}%",
@@ -122,10 +114,8 @@
     "format-wifi": "  {essid}",
     "format-ethernet": "{ipaddr}/{cidr} ",
     "tooltip-format": "{essid} - {ifname} via {gwaddr} ",
-    "format-linked": "{ifname} (No IP) ",
     "format-disconnected": "󰖪 ⚠",
-    "format-alt": "{ifname}:{essid} {ipaddr}/{cidr}",
-    "on-click-right": "nm-connection-editor"
+    "on-click": "nm-connection-editor"
   },
   "bluetooth": {
     "format": " {status}",
