@@ -84,7 +84,7 @@
     "tooltip": true,
     "format-muted": "󰝟 ",
     "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-    "on-click-right": "pavucontrol",
+    "on-click-right": "control",
     "on-scroll-up": "wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 5%+",
     "on-scroll-down": "wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 5%-",
     "scroll-step": 5,
@@ -115,7 +115,7 @@
     "format-ethernet": "{ipaddr}/{cidr} ",
     "tooltip-format": "{essid} - {ifname} via {gwaddr} ",
     "format-disconnected": "󰖪 ⚠",
-    "on-click": "nm-connection-editor"
+    "on-click": "control"
   },
   "bluetooth": {
     "format": " {status}",
@@ -124,7 +124,7 @@
     "tooltip-format": "{device_alias}",
     "tooltip-format-connected": " {device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}",
-    "on-click": "blueman-manager"
+    "on-click": "control"
   },
   "custom/powermenu": {
     "format": "⏻ ",

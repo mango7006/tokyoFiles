@@ -49,14 +49,9 @@ alias grep="rg -P -i --color=auto"
 alias ip="ip -c=auto"
 alias whatip="ip -c a | rg 'inet '"
 
-alias neofetch="echo 'neofetch is too old you dumbo'; fastfetch"
 alias ff="fastfetch"
-alias nf="fastfetch"
 
-alias vi="nvim"
 alias neovim="nvim"
-alias vim="nvim"
-alias nano="nvim"
 
 alias clean-tmp="sudo systemd-tmpfiles --clean"
 
@@ -79,7 +74,7 @@ alias .....='cd ../../../..'
 #################
 
 zsh_install() {
-  local packages=(neovim starship zoxide bat eza fastfetch trash ripgrep)
+  local packages=(neovim starship zoxide bat eza fastfetch trash-cli ripgrep)
   for package in $packages; do
     pacman -Qs $package &>/dev/null || sudo pacman -S --noconfirm $package
   done

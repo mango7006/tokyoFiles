@@ -31,7 +31,6 @@ tooltip {
   border-radius: 4px;
 }
 
-#mpris,
 #workspaces button.active {
   color: @base;
   background-color: @foam;
