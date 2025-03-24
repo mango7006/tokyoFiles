@@ -2,6 +2,12 @@
 ### mango7006 .zshrc ###
 ########################
 
+# set up XDG folders
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_STATE_HOME="$HOME/.local/state"
+export XDG_CACHE_HOME="$HOME/.cache"
+
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
 [ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
@@ -21,17 +27,10 @@ compinit
 export EDITOR="nvim"
 export VISUAL="nvim"
 
-# set up XDG folders
-export XDG_DATA_HOME="$HOME/.local/share"
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_STATE_HOME="$HOME/.local/state"
-export XDG_CACHE_HOME="$HOME/.cache"
-
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
 # Aliases
-
 alias ls="eza --color=auto --icons"
 alias l="eza -a --color=auto --icons"
 alias la="eza -alh --color=auto --icons"
@@ -77,20 +76,6 @@ zsh_install() {
   local packages=(neovim starship zoxide bat eza fastfetch trash-cli ripgrep)
   for package in $packages; do
     pacman -Qs $package &>/dev/null || sudo pacman -S --noconfirm $package
-  done
-}
-
-nvim_install() {
-  local neovim_deps=(lazygit luarocks npm typescript)
-  for deps in $neovim_deps; do 
-    pacman -Qs $deps &>/dev/null || sudo pacman -S --noconfirm $deps
-  done
-}
-
-font_install() {
-  local font_deps=(awesome-terminal-fonts ttf-droid ttf-font-awesome ttf-ibm-plex ttf-jetbrains-mono ttf-jetbrains-mono-nerd ttf-nerd-fonts-symbols)
-  for fonts in $font_deps; do 
-    pacman -Qs $fonts &>/dev/null || sudo pacman -S --noconfirm $fonts
   done
 }
 
