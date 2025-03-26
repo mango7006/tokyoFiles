@@ -103,7 +103,7 @@
     }
   },
   "memory": {
-    "interval": 30,
+    "interval": 5,
     "format": " {}%",
     "max-length": 10,
     "tooltip": true,

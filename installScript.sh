@@ -40,6 +40,7 @@ if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
   sudo pacman -S --needed --noconfirm ttf-droid ttf-font-awesome ttf-ibm-plex ttf-jetbrains-mono ttf-jetbrains-mono-nerd ttf-nerd-fonts-symbols
   sudo pacman -S --needed --noconfirm bitwarden firefox obsidian signal-desktop libnotify spotify-launcher obs-studio feh evince thunar mpv vlc nwg-look
   sudo pacman -S --needed --noconfirm brightnessctl gammastep
+  sudo pacman -S --needed --noconfirm pavucontrol nm-connection-editor blueman
   sudo pacman -S --needed --noconfirm dunst hyprland hyprlock hyprpicker qt5-wayland qt6-5compat qt6-shadertools qt6-wayland swww waybar wofi xdg-desktop-portal-gtk xdg-desktop-portal-hyprland xdg-desktop-portal-wlr kitty ly wl-clipboard
   systemctl enable NetworkManager sshd ufw bluetooth ly systemd-timesyncd
 else
