@@ -40,7 +40,7 @@ alias rcat"cat"
 
 alias cd="z"
 
-alias cp="cp -Iv"
+alias cp="cp -v"
 alias mv="mv -v"
 
 alias grep="rg -P -i --color=auto"

@@ -35,7 +35,7 @@ read -r -p "Do you want to install dependencies and packages? [y/N] " response
 if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
   echo "Downloading packages"
   sudo pacman -S --needed --noconfirm neovim
-  sudo pacman -S --needed --noconfirm starship zoxide bat eza ripgrep yazi arp-scan
+  sudo pacman -S --needed --noconfirm starship zoxide bat eza ripgrep yazi arp-scan trash-cli yazi
   sudo pacman -S --needed --noconfirm lazygit luarocks npm typescript unzip minizip fzf
   sudo pacman -S --needed --noconfirm ttf-droid ttf-font-awesome ttf-ibm-plex ttf-jetbrains-mono ttf-jetbrains-mono-nerd ttf-nerd-fonts-symbols
   sudo pacman -S --needed --noconfirm bitwarden firefox obsidian signal-desktop libnotify spotify-launcher obs-studio feh evince thunar mpv vlc nwg-look
