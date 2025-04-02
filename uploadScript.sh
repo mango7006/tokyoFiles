@@ -1,11 +1,7 @@
 #!/bin/bash
 
 source ~/secret.sh
-
-repo=~/gits/tokyoFiles/
-repo_link=mango7006/tokyoFiles.git
-repo_config=~/gits/tokyoFiles/config/
-repo_home=~/gits/tokyoFiles/home/
+source config.sh
 
 echo "Updating github repo for Dotfiles"
 

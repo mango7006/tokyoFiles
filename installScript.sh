@@ -1,7 +1,7 @@
 #!/bin/bash
 
-gitDirHome=~/gits/tokyoFiles/home
-gitDir=~/gits/tokyoFiles/config
+source config.sh
+
 conf=~/.config/
 
 echo "Install script for dotfiles"
