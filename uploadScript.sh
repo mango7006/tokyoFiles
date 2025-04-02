@@ -34,7 +34,7 @@ if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
   date=$(date +%b/%d/%H:%M)
   read -r -p "Commit Message: " comMessage
   git commit -m "$comMessage $date"
-  git push $gittoken@github.com/$repo_link
+  git push --quiet $gittoken@github.com/$repo_link
   echo "Done pushing, changes saved"
 else
   echo "Not pushing changes to github"
