@@ -2,6 +2,8 @@
 
 ### To install
 
+Script is Arch Linux only for now, you can still manually use my dotfiles.
+
 ```shell
 cd ~
 mkdir -p gits
