@@ -47,4 +47,14 @@ else
   echo -e "Not installing packages. \n WARNING: this might make my dotfiles unuseable."
 fi
 
+# pacman -Qs paru &>/dev/null || sudo pacman -S --needed --noconfirm base-devel && git clone --quiet https://aur.archlinux.org/paru.git && cd paru && makepkg -si && echo "paru is now installed."
+
+read -r -p "do you want to install AUR packages? [y/n] " response
+if [[ "$response" =~ ^([yy][ee][ss]|[yy])$ ]]; then
+  echo "installing AUR pkgs"
+  paru -S --needed --noconfirm arcolinux-logout bibata-cursor-theme-bin clipse-bin hyprshot spicetify-cli stremio tokyonight-gtk-theme-git topgrade-bin vesktop-bin waypaper
+else
+  echo -e "not installing packages. \n warning: this might make my dotfiles unuseable."
+fi
+
 echo "End of install script"
