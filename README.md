@@ -1,6 +1,6 @@
 # mango7006's dotfiles
 
-### To install
+## To install:
 
 Script is Arch Linux only for now, you can still manually use my dotfiles.
 
