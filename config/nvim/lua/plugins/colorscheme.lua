@@ -1,8 +1,9 @@
 return {
     {
-        "folke/tokyonight.nvim",
-        lazy = false,
+        "navarasu/onedark.nvim",
         priority = 1000,
-        opts = {},
+        opts = {
+            colorscheme = "deep",
+        },
     },
 }

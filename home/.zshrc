@@ -54,6 +54,15 @@ alias neovim="nvim"
 
 alias clean-tmp="sudo systemd-tmpfiles --clean"
 
+cleantmp() {
+  sudo systemd-tmpfiles --clean 
+  sudo pacman -Scc 
+  paru -Scc
+  sudo journalctl --vacuum-time=3d
+  sudo systemd-tmpfiles --remove 
+  clear
+}
+
 alias rm="trash"
 
 alias shutdown="shutdown now"
