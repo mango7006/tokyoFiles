@@ -46,19 +46,17 @@ alias mv="mv -v"
 alias grep="rg -P -i --color=auto"
 
 alias ip="ip -c=auto"
-alias whatip="ip -c a | rg 'inet '"
+alias whatip="ip -c a | grep 'inet '"
 
 alias ff="fastfetch"
 
 alias neovim="nvim"
 
-alias clean-tmp="sudo systemd-tmpfiles --clean"
-
 cleantmp() {
   sudo systemd-tmpfiles --clean 
-  sudo pacman -Scc 
-  paru -Scc
-  sudo journalctl --vacuum-time=3d
+  sudo pacman --noconfirm -Scc 
+  paru --noconfirm -Scc
+  sudo journalctl --vacuum-time=1d
   sudo systemd-tmpfiles --remove 
   clear
 }

@@ -51,7 +51,7 @@
         },
         {
           "label": "",
-          "command": "ghostty"
+          "command": "kitty"
         }
       ]
     },
