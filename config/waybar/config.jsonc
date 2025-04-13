@@ -15,11 +15,11 @@
   "modules-right": [
     "network",
     "bluetooth",
-    "memory",
+    "custom/notification",
     "pulseaudio",
     "battery",
     "custom/powermenu",
-    "tray"
+    "tray",
   ],
   "hyprland/window": {
     "format": "{}",
@@ -138,5 +138,21 @@
       "firefox"
     ],
     "interval": 2
+  },  
+  "custom/notification": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+     "notification": "<span foreground='red'><sup>⬤ </sup></span>",
+      "none": " ",
+      "dnd-notification": "<span foreground='red'><sup>⬤ </sup></span>",
+      "dnd-none": " "
+   },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "sleep 0.1 && swaync-client -t -sw",
+    "on-click-right": "sleep 0.1 && swaync-client -d -sw",
+    "escape": true
   }
 }
