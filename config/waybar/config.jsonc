@@ -127,7 +127,7 @@
     "on-click": "blueman-manager"
   },
   "custom/powermenu": {
-    "format": "⏻ ",
+    "format": "⏻",
     "escape": true,
     "on-click": "archlinux-logout"
   },

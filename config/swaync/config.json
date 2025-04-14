@@ -19,7 +19,6 @@
   "hide-on-action": true,
   "script-fail-notify": true,
   "widgets": [
-    "buttons-grid",
     "mpris",
     "volume",
     "title",
@@ -56,7 +55,7 @@
       ]
     },
     "mpris": {
-      "blur": false,
+      "blur": true,
       "image-size": 100,
       "image-radius": 5
     },
