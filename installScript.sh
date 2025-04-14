@@ -10,7 +10,7 @@ read -r -p "Do you want to make a backup of your current dotfiles? (if this is a
 if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
   echo "Creating backup of current dotfiles"
   mkdir -p ~/.config/bkup
-  sudo tar -czvf ~/.config/bkup/backup.tar.gz $conf/kitty $conf/swaync $conf/fastfetch $conf/hypr $conf/nvim $conf/waybar $conf/wofi $conf/starship.toml ~/.zshrc
+  sudo tar -czvf ~/.config/bkup/backup.tar.gz $conf/kitty $conf/swaync $conf/hypr $conf/nvim $conf/waybar $conf/wofi $conf/starship.toml ~/.zshrc
 else
   echo "Not making a backup of current dotfiles"
 fi
@@ -19,7 +19,6 @@ read -r -p "Are you SURE that you want to replace your dotfiles? [y/N] " respons
 if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
   echo "Alrighty, overwriting."
   cp -r $gitDir/swaync/ $conf
-  cp -r $gitDir/fastfetch/ $conf
   cp -r $gitDir/hypr/ $conf
   cp -r $gitDir/nvim/ $conf
   cp -r $gitDir/waybar/ $conf

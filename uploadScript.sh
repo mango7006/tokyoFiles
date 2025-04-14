@@ -12,7 +12,6 @@ if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
   sudo cp ~/.zshrc $repo_home
   sudo cp ~/.config/starship.toml $repo_config
   sudo cp -r ~/.config/swaync/ $repo_config
-  sudo cp -r ~/.config/fastfetch/ $repo_config
   sudo cp -r ~/.config/hypr/ $repo_config
   sudo cp -r ~/.config/nvim/ $repo_config
   sudo cp -r ~/.config/waybar/ $repo_config
