@@ -58,6 +58,7 @@ cleantmp() {
   paru --noconfirm -Scc
   sudo journalctl --vacuum-time=1d
   sudo systemd-tmpfiles --remove 
+  paccache -rk0
   clear
 }
 
@@ -80,7 +81,7 @@ alias .....='cd ../../../..'
 #################
 
 zsh_install() {
-  local packages=(neovim starship zoxide bat eza fastfetch trash-cli ripgrep)
+  local packages=(neovim starship zoxide bat eza fastfetch trash-cli ripgrep pacman-contrib)
   for package in $packages; do
     pacman -Qs $package &>/dev/null || sudo pacman -S --noconfirm $package
   done
@@ -101,3 +102,4 @@ export LESS_TERMCAP_us=$'\E[01;32m'
 
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-syntax-highlighting
+export LIBVIRT_DEFAULT_URI="qemu:///system"
