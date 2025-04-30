@@ -102,4 +102,3 @@ export LESS_TERMCAP_us=$'\E[01;32m'
 
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-syntax-highlighting
-export LIBVIRT_DEFAULT_URI="qemu:///system"
