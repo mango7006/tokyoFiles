@@ -36,7 +36,7 @@ alias l="eza -a --color=auto --icons"
 alias la="eza -alh --color=auto --icons"
 
 alias cat="bat"
-alias rcat"cat"
+alias rcat="cat"
 
 alias cd="z"
 
